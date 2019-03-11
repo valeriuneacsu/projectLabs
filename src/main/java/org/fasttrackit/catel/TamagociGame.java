@@ -11,8 +11,8 @@ public class TamagociGame {
         dog2.setName("Snowy");
 
         for (int zi=0; zi<15; zi++) {
-            System.out.println("zi " + zi + " varsta " + dog2.getVarsta() + " greutate " + dog2.getGreutate());
             dog2.mananca();
+            System.out.println("zi " + zi + " varsta " + dog2.getVarsta() + " greutate " + dog2.getGreutate());
         }
 
         System.out.println("Catelul " + dog2.getName() + " are varsta " + dog2.getVarsta() + " greutate " + dog2.getGreutate());
