@@ -23,6 +23,8 @@ public class RezolvareLab3 {
         System.out.println("6b. Numarul cifrelor numarului n");
         System.out.println("6c. Cifra minima si maxima a numarului n");
         System.out.println("6d. Cifra control a numarului n");
+        System.out.println("7. Inversul numarului n");
+        System.out.println("8. Palindrom sau nu");
         System.out.println("x. Iesire");
     }
 
@@ -97,7 +99,19 @@ public class RezolvareLab3 {
                 System.out.println("Dati numarul nr:");
                 n = in.nextInt();
                 System.out.println("Cifra control a numarului " + n + " este: " + cifraControl(n));
+
+            } else if (optiune.equals("7")) {
+                System.out.println("Dati numarul nr:");
+                n = in.nextInt();
+                System.out.println("Inversul numarului " + n + " este: " + inversulNr(n));
+
+            } else if (optiune.equals("8")) {
+                System.out.println("Dati numarul nr:");
+                n = in.nextInt();
+                numarulFormat(n);
+
             }
+
 
 
             else if (optiune.equals("x")) {
@@ -216,6 +230,28 @@ public class RezolvareLab3 {
             nr = Suma;
         } while (nr>9);
         return Suma;
+    }
+
+    private static int inversulNr(int nr) {
+        int invers = 0;
+        while (nr > 0 ){
+            invers = invers* 10 + nr % 10;
+            nr = nr/10;
+        }
+        return invers;
+    }
+    public static void numarulFormat(int nr) {
+        int rest, suma=0, copie;
+        copie=nr;
+        while(nr>0){
+            rest= nr%10;
+            suma= (suma*10)+rest;
+            nr=nr/10;
+        }
+
+        if(copie==suma)
+            System.out.println("Numarul " + copie + " este palindrom");
+        else System.out.println("Numarul " + copie + " nu e palindrom");
     }
 
 }
